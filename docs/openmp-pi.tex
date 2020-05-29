@@ -157,7 +157,7 @@ void bs(long a, long b, mpz_class &P, mpz_class &Q, mpz_class &T, int max_depth=
 \end{figure}
 \par 从图表来看，算法一在 4 线程时表现最好，大约有 2 的加速比。
 
-\par 对于算法二，我们可以从图表数据 \ref{fig2} 中清晰地看出它的线性收敛性\footnote{图中纵轴对数化以保持与测试时计算位数 10 倍增长的一致性。}。并且在 2 线程时效果最好，获得 1.7 左右的加速比。
+\par 对于算法二\footnote{$\pi$ 的计算结果在 \texttt{docs/chudnovsky\_results/} 目录下。}，我们可以从图表数据 \ref{fig2} 中清晰地看出它的线性收敛性\footnote{图中纵轴对数化以保持与测试时计算位数 10 倍增长的一致性。}。并且在 2 线程时效果最好，获得 1.7 左右的加速比。
 
 \begin{figure}[h] \label{fig2}
 	\centering
