@@ -1,4 +1,19 @@
-#include "chudnovsky.h"
+#include "pi.h"
+
+std::string pi_simple(int N, int n_threads) {
+	mpf_class sum = 0;
+	mpf_class step = 1.0 / N;
+	mpf_class x;
+	#pragma omp parallel for private( x ) reduction(+: sum) num_threads(n_threads)
+	for (int i = 0; i < N; i++) {
+		x = ( i + 0.5 ) * step;
+		sum += 4.0 / (1.0 + x * x);
+	}
+	mpf_class pi = sum*step;
+	mp_exp_t exp;
+	return pi.get_str(exp);
+}
+
 
 mpz_class qpow(mpz_class x, unsigned int n) {
 	if (x == 0) {

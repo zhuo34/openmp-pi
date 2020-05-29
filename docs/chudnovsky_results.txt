@@ -1,0 +1,49 @@
+digits: 10
+threads: 1 time: 0.000170946
+threads: 2 time: 0.000283957
+threads: 4 time: 0.000216007
+threads: 8 time: 0.00329089
+threads: 16 time: 0.000291109
+============
+digits: 100
+threads: 1 time: 0.000145912
+threads: 2 time: 0.000275135
+threads: 4 time: 0.000313997
+threads: 8 time: 0.0013001
+threads: 16 time: 0.000427961
+============
+digits: 1000
+threads: 1 time: 0.00144792
+threads: 2 time: 0.00137591
+threads: 4 time: 0.0016551
+threads: 8 time: 0.00154185
+threads: 16 time: 0.00135684
+============
+digits: 10000
+threads: 1 time: 0.0167911
+threads: 2 time: 0.00973797
+threads: 4 time: 0.0209551
+threads: 8 time: 0.0117369
+threads: 16 time: 0.01157
+============
+digits: 100000
+threads: 1 time: 0.282426
+threads: 2 time: 0.186002
+threads: 4 time: 0.222871
+threads: 8 time: 0.225826
+threads: 16 time: 0.205379
+============
+digits: 1000000
+threads: 1 time: 3.65212
+threads: 2 time: 1.89685
+threads: 4 time: 2.04866
+threads: 8 time: 2.14144
+threads: 16 time: 3.13773
+============
+digits: 10000000
+threads: 1 time: 48.5977
+threads: 2 time: 28.9528
+threads: 4 time: 29.0932
+threads: 8 time: 29.7749
+threads: 16 time: 29.839
+============
