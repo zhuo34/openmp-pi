@@ -16,7 +16,7 @@
 \makecover
 
 \section{介绍}
-\par 计算无理数 $\pi$ 的值在数值计算中是一个长久的问题。自 Chunovsky 兄弟将 $\pi$ 计算至 10 亿位后，Chunovsky 算法甚至成为了一种业余地测试计算机性能的方式。本次试验选取一种较为简单的算法和 Chunovsky 算法计算 $\pi$，并用 OpenMP 实现它们的并行算法。
+\par 计算无理数 $\pi$ 的值在数值计算中是一个长久的问题。自 Chunovsky 兄弟将 $\pi$ 计算至 10 亿位后，Chunovsky 算法甚至成为了一种业余地测试计算机性能的方式。本次试验选取一种较为简单的算法和 Chunovsky 算法计算 $\pi$，并用 OpenMP 实现它们的并行算法。完整代码在 \hyperlink{https://github.com/zhuo34/openmp-pi}{GitHub}。
 
 \section{实验平台}
 \begin{enumerate}[label=(\arabic*)]
@@ -56,7 +56,7 @@ std::string pi_simple(int N, int n_threads) {
 	\frac{1}{\pi} = 12\cdot\sum\limits_{n=0}^{\infty} \frac{(-1)^n(6n)!}{(3n)!(n!)^3} \cdot \frac{13591409+545140134n}{640320^{3n+3/2}} \label{eq2}
 \end{equation}
 
-\par 观察公式 \ref{eq2}，其中每一项有大量的乘除法运算，而众所周知，乘除法的效率远比加减法低，因此可以用到 Binary Splitting 技术对计算过程加速。它的核心思想是将每一项的分数合并为加法，最终只进行一次或少量乘除法。[1, 2]
+\par 观察公式 \ref{eq2}，其中每一项有大量的乘除法运算，而众所周知，乘除法的效率远比加减法低，因此可以用到 Binary Splitting 技术对计算过程加速。它的核心思想是将每一项的分数合并为加法，最终只进行一次或少量乘除法。\cite{webref}\cite{haible1998fast}
 
 \par 代码如下。
 \begin{lstlisting}[language=c++]
@@ -162,10 +162,9 @@ void bs(long a, long b, mpz_class &P, mpz_class &Q, mpz_class &T, int max_depth=
 \begin{figure}[h] \label{fig2}
 	\centering
 	\subfigure[耗时]{
-		\includegraphics[width=.75\linewidth]{imgs/time_c}
-	}
-	\subfigure[加速比]{
-		\includegraphics[width=.75\linewidth]{imgs/speed_c}
+		\includegraphics[width=.5\linewidth]{imgs/time_c}
+	}\subfigure[加速比]{
+		\includegraphics[width=.5\linewidth]{imgs/speed_c}
 	}
 	\subfigure[耗时数据图]{
 		\includegraphics[width=.75\linewidth]{imgs/graph_c}
@@ -175,6 +174,8 @@ void bs(long a, long b, mpz_class &P, mpz_class &Q, mpz_class &T, int max_depth=
 
 \par 此次试验通过计算 $\pi$ 运用了 OpenMP 并行框架，掌握了 OpenMP/C++ 的并行代码编写能力，体会了其中的并行思想，收获颇丰。
 
+\bibliographystyle{plain}
+\bibliography{refs}
 
 \end{document}
 

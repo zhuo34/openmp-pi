@@ -16,7 +16,7 @@
 \RequirePackage{enumitem}
 %\RequirePackage{xkeyval}
 
-\RequirePackage[breaklinks,colorlinks,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\RequirePackage[breaklinks,colorlinks,linkcolor=blue,citecolor=black,urlcolor=blue]{hyperref}
 \RequirePackage{fontspec}
 
 \RequirePackage{multirow}
